@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-def greet(String name = "unknown") {
+def call(String name = "unknown") {
   echo "Greated to greet you Mr ${name}"
 }
 

@@ -3,6 +3,8 @@ package com.github.kikovalle.jenkins
 class HelmDeployer {
   
   static def deploy(script, appNameAndFolder, releaseNamespace) {
+    script.sh "echo 'Lets see if we can install curl in this container'"
+    script.sh "apt -y install curl"
     script.sh "echo 'Example to test deployment with helm from a pipeline using a global shared library for app ${appNameAndFolder} and release ${releaseNamespace}'"
     script.sh "curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.23.4/bin/linux/amd64/kubectl"
     script.sh "chmod +x ./kubectl"

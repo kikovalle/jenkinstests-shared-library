@@ -10,7 +10,7 @@ def call(String name = "unknown") {
   println "Fact in response       : ${fact}"
   println "Length of fact text    : ${length}"
   if (Integer.parseInt(length) > minLength) {
-    println "Result       : ${response}"
+    println "Result       : ${fact}"
   } else {
     unstable("Result length (${length}) is not long enough (${minLength} characters minimun)!!!")
   }

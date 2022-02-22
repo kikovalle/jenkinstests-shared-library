@@ -5,7 +5,6 @@ def call(String name = "unknown") {
   if (response && response.length() > 300) {
     println "Result       : ${response}"
   } else {
-    println "Result       : ${response} is shorter than 300 characters, so this build will be marked as unstable"
-    error "Response is shorter than 300 characters"
+    unstable("Result length is not long enough (300 characters minimun)!!!")
   }
 }

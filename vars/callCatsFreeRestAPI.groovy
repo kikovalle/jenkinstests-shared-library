@@ -12,6 +12,6 @@ def call(String name = "unknown") {
   if (Integer.parseInt(length) > minLength) {
     println "Result       : ${fact}"
   } else {
-    unstable("Result length (${length}) is not long enough (${minLength} characters minimun)!!!")
+    unstable("Result length ${length} is not long enough ${minLength} characters minimun)!!!")
   }
 }

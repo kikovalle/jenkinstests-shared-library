@@ -1,4 +1,7 @@
 #!/usr/bin/env groovy
+@Grab(group='org.codehaus.groovy.modules.http-builder', module='http-builder', version='0.7' )
+
+import groovyx.net.http.RESTClient
 
 def call(String name = "unknown") {
   def srvUrl = "https://catfact.ninja"

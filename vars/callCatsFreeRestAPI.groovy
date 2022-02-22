@@ -5,13 +5,17 @@ import groovyx.net.http.RESTClient
 
 def call(String name = "unknown") {
   def srvUrl = "https://catfact.ninja"
-  RESTClient client = new RESTClient(srvUrl)
+  
   def response
   try {
-      response = client.get(path: "/fact")
-      echo "Response OK"
-      echo "${response}"
-  } catch (RESTClientException e) {
-      echo "Response KO"
+    def client = new RESTClient(srvUrl)
+    response = client.get(path: "/fact")
+    println "Status       : ${response.status}"
+    println "Body         : ${response.data.text}"
+    echo "Response OK"
+    echo "${response}"
+  } catch (Exception e) {
+    println "Error      : ${e.statusCode}"
+    println "Message    : ${e.response.data}"
   }
 }

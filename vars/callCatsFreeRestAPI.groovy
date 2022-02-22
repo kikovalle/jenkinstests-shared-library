@@ -3,7 +3,7 @@
 def call(String name = "unknown") {
   def minLength = 200
   def srvUrl = "https://catfact.ninja/fact"
-  def preResponse = sh(returnStdout: true, script: "curl -X GET -H 'content-type: application/json' ${srvUrl} | jq --raw-output -c '.' ")
+  def preResponse = sh(returnStdout: true, script: "curl -X GET -H 'content-type: application/json' ${srvUrl} | jq --raw-output -c '.' | @tsv ")
   println "Processed response: ${preResponse}"
   def fact = sh(returnStdout: true, script: "echo '${preResponse}' | jq --raw-output -c '.fact' ").trim()
   def length  = sh(returnStdout: true, script: "echo '${preResponse}' | jq --raw-output -c '.length' ").trim()

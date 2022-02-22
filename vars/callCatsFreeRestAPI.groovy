@@ -9,7 +9,7 @@ def call(String name = "unknown") {
   def length  = sh(returnStdout: true, script: "echo '${preResponse}' | jq --raw-output -c '.length' ")
   println "Fact in response       : ${fact}"
   println "Length of fact text    : ${length}"
-  if (length > minLength) {
+  if (Integer.parseInt(length) > minLength) {
     println "Result       : ${response}"
   } else {
     unstable("Result length (${length}) is not long enough (${minLength} characters minimun)!!!")

@@ -10,6 +10,7 @@ def call(String name = "unknown") {
   try {
     def client = new RESTClient(srvUrl)
     response = client.get(path: "/fact")
+    println "Full response: ${response}"
     println "Status       : ${response.status}"
     println "Body         : ${response.data.text}"
     echo "Response OK"
